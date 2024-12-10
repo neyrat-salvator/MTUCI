@@ -16,6 +16,7 @@ eps. Использовать рекуррентные соотношения п
 
 public class LR1 {
 
+    // Метод подсчета факториала числа
     static int factorial(int n) {
         int res = 1, i;
         for (i = 2; i <= n; i++) {
@@ -23,21 +24,28 @@ public class LR1 {
         }
         return res;
     }
+  
+    public static void main(String[] args) {   
 
-    public static void main(String[] args) {
+        // Исходные данные для алгоритма
         double x = 0.5;
         double eps = Math.E;
 
-        double sum = 0;
-        double term;
+        // Переменная для контроля цикла
         int n = 1;
 
+        // Переменные для выражений
+        double sum = 0;
+        double term;
+
+        // Цикл, в котором отрабатывается алгоритм программы
         do {
             term = ((2 * n * Math.pow(x, (4 * n + 2))) / factorial(2 * n + 1));
             sum += term;
             n++;
         } while (Math.abs(term) > eps);
 
+        // Формирование контрольного выражения
         double control = (Math.sin(Math.pow(x, 2)) - Math.pow(x, 2) * Math.cos(Math.pow(x, 2)));
 
         System.out.printf("Сумма ряда: %.6f\n", sum);
