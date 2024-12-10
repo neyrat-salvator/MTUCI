@@ -1,4 +1,8 @@
 package src.LR.LR4;
+
+import java.util.Arrays;
+import java.util.List;
+
 // Юрцук Константин Сергеевич
 // Лабораторная работа №4
 // Вариант: 26
@@ -11,31 +15,68 @@ package src.LR.LR4;
 конца предложения является точка. Составить программу для обработки
 текстовой информации по поставленному условию.
 
-Для каждой из N точек тр􀉺хмерного пространства даны расстояния
-R1, R2, R3 от не􀉺 до тр􀉺х заданных точек. Определить процент точек,
-удаление которых от каждой из тр􀉺х заданных превышает расстояние
-E. Для подходящих точек вычислить также произведение среднего
-геометрического соответствующих ей значений R1, R2, R3.
+Текст содержит наряду с другой информацией целые числа. Опреде-
+лить самое большое и самое маленькое целое число.
 */
 
 public class LR4 {
+
+    // Метод для преобразования текста в число
+    static int writeNumberFromListString(List<String> stringNumber, int value) {
+
+        // Проверка на наличие числа на входе
+        if (stringNumber.get(value) != "") {
+            int numberFromListString = Integer.parseInt(stringNumber.get(value));
+            return numberFromListString;
+        } else {
+            return 0;
+        }
+    }
+
+    // Основной метод класса
     public static void main(String[] args) {
-        double x = 0.5;
-        double eps = Math.E;
 
-        double sum = 0;
-        double term;
-        int n = 1;
+        // Исходные данные для алгоритма
 
-        do {
-            term = ((2 * n * Math.pow(x, (4 * n + 2))) / factorial(2 * n + 1));
-            sum += term;
-            n++;
-        } while (Math.abs(term) > eps);
+        // Текст, откуда будут искаться числа
+        String text = "Какой-то текст и цифры в нём 4, 5";
+        // 2, 3, 100, 6, 10, 1, 2
 
-        double control = (Math.sin(Math.pow(x, 2)) - Math.pow(x, 2) * Math.cos(Math.pow(x, 2)));
+        // начальные значения максимального и минимального числа
+        int maxNumber = 0;
+        int minNumber = 0;
 
-        System.out.printf("Сумма ряда: %.6f\n", sum);
-        System.out.printf("Контрольная формула: %.6f\n", control);
+        // Переменная для контроля значений в цикле
+        int i;
+
+        // Удаление всех символов кроме чисел
+        text = text.replaceAll("[^0-9]+", " ");
+
+        // Формирования списка из полученных чисел со знаком-разделителем в виде пробела
+        List<String> newText = Arrays.asList(text.trim().split(" "));
+
+        // Цикл с реализацией нужного алгоритма
+        for (i = 0; i <= (newText.size() - 1); i++) {
+
+            // Инициирование переменной, в которую записывается рассматриваемое преобразованное число из текста в заданном списке
+            int cycleNumber = writeNumberFromListString(newText, i);
+
+            // Проверка на индекс цикла для дальнейшей проверки записи числа
+            if (i != 0) {
+                if (maxNumber <= cycleNumber) {
+                    maxNumber = cycleNumber;
+                }
+                if (minNumber >= cycleNumber) {
+                    minNumber = cycleNumber;
+                }
+            } else {
+                maxNumber = cycleNumber;
+                minNumber = cycleNumber;
+            }
+        }
+
+        // Вывод искомых чисел
+        System.out.println("Самое большое число: " + maxNumber);
+        System.out.println("Самое маленькое число: " + minNumber);
     }
 }

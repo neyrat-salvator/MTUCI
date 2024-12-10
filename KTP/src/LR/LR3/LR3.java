@@ -17,6 +17,8 @@ package src.LR.LR3;
 угольник существует*/
 
 public class LR3 {
+
+    // Основной метод класса
     public static void main(String[] args) {
         
         // Исходные параметры алгоритма

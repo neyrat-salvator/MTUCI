@@ -25,6 +25,7 @@ public class LR1 {
         return res;
     }
   
+    // Основной метод класса
     public static void main(String[] args) {   
 
         // Исходные данные для алгоритма
