@@ -1,4 +1,7 @@
 package src.LR.LR3;
+
+import java.util.List;
+import java.util.ArrayList;
 // Юрцук Константин Сергеевич
 // Лабораторная работа №3
 // Вариант: 26
@@ -21,13 +24,31 @@ public class LR3 {
         // Исходные параметры алгоритма
         int row = 3;
         int column = 7;
-        double[][] triangle = new double [row][column];
+
+        // Переменная, куда будут собираться треугольники по параметрам
+        int[][] triangles = new int [row][column];
+
+        // Переменные для контроля значений в циклах
+        int i;
+        int n;
 
         // Исходные данные для треугольников
-        double[] a = {1, 2, 3, 4, 5, 6, 7};
-        double[] b = {8, 9, 1, 2, 3, 4, 5};
-        double[] c = {6, 7, 8, 9, 1, 2, 3};
+        int[] a = {1, 2, 3, 4, 5, 6, 7};
+        int[] b = {8, 9, 1, 2, 3, 4, 5};
 
-        
+        // Цикл с алгоритмом для записи значений в каждый столбец
+        for (i = 0; i <= (column - 1); i++) {
+            System.out.println("Вывод " + (i+1) + " треугольника в цикле:");
+            
+            // Цикл с алгоритмом для записи значений в каждую строчку
+            for (n = 0; n <= (row - 1); n++) {
+                if (n == 0) {
+                    triangles[n][i] = a[i];
+                } else {
+                    triangles[n][i] = b[i];
+                }
+                System.out.println(triangles[n][i]);
+            }
+        }
     }
 }
