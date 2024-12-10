@@ -7,34 +7,27 @@ package src.LR.LR3;
 с небольшим количеством строк или столбцов
 
 Составить программу для решения задачи с использованием дву-
-мерных массивов.*/
+мерных массивов.
+
+Дан двумерный массив из 3 строк и 7 столбцов. Рассматривая содер-
+жание каждого элемента столбца как длину стороны треугольника,
+напечатать номера столбцов, которыми заданы равнобедренные тре-
+угольники, и число таких столбцов. Считаем, что во всех случаях тре-
+угольник существует*/
 
 public class LR3 {
-    static int factorial(int n) {
-        int res = 1, i;
-        for (i = 2; i <= n; i++) {
-            res *= i;
-        }
-        return res;
-    }
-
     public static void main(String[] args) {
-        double x = 0.5;
-        double eps = Math.E;
+        
+        // Исходные параметры алгоритма
+        int row = 3;
+        int column = 7;
+        double[][] triangle = new double [row][column];
 
-        double sum = 0;
-        double term;
-        int n = 1;
+        // Исходные данные для треугольников
+        double[] a = {1, 2, 3, 4, 5, 6, 7};
+        double[] b = {8, 9, 1, 2, 3, 4, 5};
+        double[] c = {6, 7, 8, 9, 1, 2, 3};
 
-        do {
-            term = ((2 * n * Math.pow(x, (4 * n + 2))) / factorial(2 * n + 1));
-            sum += term;
-            n++;
-        } while (Math.abs(term) > eps);
-
-        double control = (Math.sin(Math.pow(x, 2)) - Math.pow(x, 2) * Math.cos(Math.pow(x, 2)));
-
-        System.out.printf("Сумма ряда: %.6f\n", sum);
-        System.out.printf("Контрольная формула: %.6f\n", control);
+        
     }
 }
