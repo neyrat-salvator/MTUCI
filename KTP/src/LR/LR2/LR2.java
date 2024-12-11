@@ -38,7 +38,8 @@ public class LR2 {
             if (X[i] == 0) {
                 count_X++;
             }
-            System.out.println("Вывод значений в итерации: " + "\nX: " + X[i] + "\nY: " + Y[i]);
+            System.out.println("Вывод значений в итерации: " + 
+            "\nX: " + X[i] + "\nY: " + Y[i]);
         }
         System.out.println("Вывод числа элементов X, ранвых нулю: " + count_X);
     }

@@ -1,5 +1,9 @@
 package src.LR.LR5_8;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 // Юрцук Константин Сергеевич
 // Лабораторная работа №5 КОЛЛЕКЦИИ
 // Лабораторная работа №7 ВВОД-ВЫВОД. ПАКЕТ JAVA.IO
@@ -25,7 +29,54 @@ package src.LR.LR5_8;
 Изменить пользовательское меню для добавления работы с внешними файлами.
 */
 
-public class LR5_8 {
+class Event {
+
+    String date;
+    String time;
+
+    class Birthday extends Event {
+        String hero;
+        String place;
+        int age;
+
+        static String toString(int value) {
+            return String.valueOf(value);
+        }
+    }
+
+    class Meeting extends Event {
+        String person;
+        String place;
+
+        static String toString(int value) {
+            return String.valueOf(value);
+        }
+    }
+
+    class Custom extends Event {
+        String description;
+
+        static String toString(int value) {
+            return String.valueOf(value);
+        }
+    }
+    
+}
+
+public class LR5_8 extends Event {
+
+    static List<String> events = new ArrayList<String>();
+
+    static void show(List<String> value) {
+        System.out.println("Список программ:");
+        for (int i = 0; i <= (value.size() - 1); i++) {
+            System.out.println(value.get(i));
+        }
+    }
+
+    static void add(String event, String value) {
+        
+    }
 
     // Основной метод класса
     public static void main(String[] args) {
