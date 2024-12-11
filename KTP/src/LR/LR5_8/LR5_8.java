@@ -67,15 +67,15 @@ public class LR5_8 extends Event {
 
     static List<String> events = new ArrayList<String>();
 
-    static void show(List<String> value) {
+    static void show() {
         System.out.println("Список программ:");
-        for (int i = 0; i <= (value.size() - 1); i++) {
-            System.out.println(value.get(i));
+        for (int i = 0; i <= (events.size() - 1); i++) {
+            System.out.println(events.get(i));
         }
     }
 
-    static void add(String event, String value) {
-        
+    static void add() {
+        System.out.println("Какое событие добавить? " + String event = );
     }
 
     // Основной метод класса
