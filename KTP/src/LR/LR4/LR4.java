@@ -39,7 +39,7 @@ public class LR4 {
         // Исходные данные для алгоритма
 
         // Текст, откуда будут искаться числа
-        String text = "Какой-то текст и цифры в нём 4, 5";
+        String text = "Какой-то текст и цифры в нём 5";
         // 2, 3, 100, 6, 10, 1, 2
 
         // начальные значения максимального и минимального числа
@@ -56,7 +56,7 @@ public class LR4 {
         List<String> newText = Arrays.asList(text.trim().split(" "));
 
         // Цикл с реализацией нужного алгоритма
-        for (i = 0; i <= (newText.size() - 1); i++) {
+        for (i = 0, maxNumber = 0, minNumber = 0; i <= (newText.size() - 1); i++) {
 
             // Инициирование переменной, в которую записывается рассматриваемое преобразованное число из текста в заданном списке
             int cycleNumber = writeNumberFromListString(newText, i);
