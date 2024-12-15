@@ -2,6 +2,7 @@ package src.LR.LR5_8;
 
 import java.io.*;
 import java.util.*;
+import javax.swing.*;
 
 // Юрцук Константин Сергеевич
 // Лабораторная работа №5 КОЛЛЕКЦИИ
@@ -150,10 +151,18 @@ class EventList {
 }
 
 // Пользовательское меню
-public class Events {
+public class Events_GUI {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         EventList eventList = new EventList();
+        JFrame frame = new JFrame("Менеджер событий");
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 300);
+        frame.setLocationRelativeTo(null);
+        JButton button = new JButton("Тестовая кнопка");
+        frame.getContentPane().add(button);
+        frame.setVisible(true);
 
         while (true) {
             System.out.println("Menu:");
