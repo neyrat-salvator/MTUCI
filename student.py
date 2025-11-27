@@ -10,8 +10,11 @@ class Student:
         # self.semesters: Semesters = Semesters(student=self)
         
     def __str__(self):
-        outer_text: str = 'Выбраны следующие параметры студента:\n'
-        for attr_key, attr_value in vars(self).items():
-            outer_text += f'\n{attr_key}: {attr_value}'
+        outer_text: str = f"""Выбраны следующие параметры студента:
+        1. ФИО: {self.full_name}
+        1. Группа: {self.group}
+        1. Зачетка: {self.grade_book}
+        1. Номер в списке группы: {self.position}
+        """
         
         return outer_text
