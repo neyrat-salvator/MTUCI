@@ -1,5 +1,6 @@
 def check_float(value):
     if type(value) == float:
+        value: float
         return value
     else:
         debug_text: str = f"""
